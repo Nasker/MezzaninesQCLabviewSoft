@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Agilent 8000 Series Instrument Driver Readme</title>
+</head>
+<body>
+<h2>Agilent 8000 Series Instrument Driver Readme</h2>
+
+<para>To rate this instrument driver, go to the driver download page on the <a href="http://www.ni.com/idnet">Instrument Driver Network</a>.</para>
+<h4>1. Overview</h4>
+<para></para>
+Instrument Driver Technology: LabVIEW Plug and Play (project-style)
+<br>
+Manufacturer: Agilent
+<br>
+Supported Language(s): LabVIEW
+<br>
+Supported Model(s): MSO8104A, MSO8064A, DSO8104A, DSO8064A, DSO80204B, DSO80304B, DSO80404B, DSO80604B, DSO80804B, DSO81004B, DSO81204B, DSO81304B, DSO80404A, DSO81004A, DSO81204A, DSO81304A,
+                    DSA80204B, DSA80304B, DSA80404B, DSA80604B, DSA80804B, DSA81004B, DSA81204B, DSA81304B<br>
+<para>
+<br>
+Model(s) Tested: MSO8104A,DSO81204B,DSA80804B
+<br>
+Interface(s): GPIB,Ethernet
+<br>
+Firmware Revision(s) Tested: 05.20.0000, 05.30.0000
+<br>
+Certified: Yes
+<br>
+NI Supported: Yes
+<br>
+Source Code Available: Yes
+<br>
+Driver Revision: 2.1.2
+<br>
+Original Release Date: 02/13/2007
+<br>
+Current Revision Date: 04/2015
+</para>
+
+<h4>2. Required Software</h4>
+<para>Some software components need to be installed before using this
+instrument driver. The minimum versions of these components are listed
+below, and can be downloaded from the Download Site.
+<br>
+<br>
+VISA 5.0 or later
+<br>
+<br>
+Refer to the <i>LabVIEW Help</i> for more information about software requirements. You access the <i>LabVIEW Help</i> by selecting <i>Help&raquo;Search the LabVIEW Help</i>.</para>
+
+<h4>3. Known Issues</h4>
+<para>
+To report issues or provide feedback about this instrument driver, please send an email to <a href="mailto:instrument.drivers@ni.com">instrument.drivers@ni.com</a>.</para>
+<br>
+<br>
+<li>Running VISA for a prolonged period of time may cause main instrument application to crash.</li>
+<br>
+<li>Manual says that enabling mark testing will avoid the "settings conflict" error when calling other mask commands. However, this does not appear to be the case. After enabling mark testing through the
+"Configure Mark Test" VI, calling "Configure Mask Scaling" still causes the "settings conflict" error.</li>
+<br>
+<li>RJDJ Extraction Measurement is only supported for Agilent 80,000 series.</li>
+<br>
+<li>"Fetch Measurement(Data Rate-Unit Interval)" and "Configure Measurement Trend Setting" VIs work for Agilent 8000 series but still returns mulitple errors for reasons unknown.</li>
+<br>
+
+<h4>4. Revision History</h4>
+The latest version of this and other LabVIEW and LabWindows/CVI instrument drivers can be downloaded at the <a href="http://www.ni.com/idnet">Instrument Driver Network</a>.<br>
+<br>
+REV 1.0, 2/13/07<br>
+Modified by: Feng Shi, ShangHai,China.<br>
+Original release.
+<br>
+<br>
+REV 2.0, 8/16/07<br>
+Modified by: Bolutife Ajayi<br>
+Added 80000 series support<br>
+Modified VIs: 	 
+<li>Configure Channel</li>
+<li>Configure Measurement Histogram</li>
+<li>Configure Measurement Histogram (More)</li>
+<li>Fetch Measurement</li>
+<li>Fetch Measurement (More)</li>
+<li>Configure Trigger Mode</li>
+<li>Configure Trigger (Edge)</li>
+New VIs: 
+<li>Clear Measurements</li>
+<li>Configure Measurment RJDJ</li>
+<li>Configure RJDJ Extraction Measurement</li>
+<li>Fetch Measurement RJDJ</li>
+<li>Read Measurement RJDJ</li>
+<li>Fetch Measurement (Data Rate-Unit Interval)
+<li>Read Measurement (Data Rate-Unit Interval)	
+<li>Configure Jitter</li>
+<li>Configure Measurement Histogram (Data Rate-Unit Interval)</li>
+<li>Configure Measurement Trend</li>
+<li>Configure Measurement Trend (Data Rate-Unit Interval)</li>
+<li>Configure Measurement Trend (N Cycle Jitter)</li>
+<li>Configure Measurement Trend (Phase)</li>
+<li>Configure Measurement Trend (More)</li>
+<li>Configure Measurement Trend (Setup and Hold)</li>
+<li>Configure Measurement Trend (TIE)</li>
+<li>Configure Measurement Trend Settings</li>
+<li>Configure Jitter Spectrum</li>
+<li>Configure Jitter Spectrum (Data Rate-Unit Interval)</li>
+<li>Configure Jitter Spectrum Trend (N Cycle Jitter)</li>
+<li>Configure Jitter Spectrum (Phase)</li>
+<li>Configure Jitter Spectrum (Setup and Hold)</li>
+<li>Configure Jitter Spectrum (More)</li>
+<li>Configure Jitter Spectrum (TIE)</li>
+<li>Configure Jitter Spectrum Settings</li>
+<li>Configure Clock Recovery</li>
+<li>Configure Mask Test</li>
+<li>Configure Automask</li>
+<li>Configure Mask Scaling</li>
+<li>Configure Real-Time Eye</li>
+<li>Start Stop Mask Test</li>
+<li>Mask Actions</li>
+<li>Query Mask Test Results</li>
+<br>
+
+REV 2.0.1, 12/20/07<br>
+Modified by Phil Nwoha, NI, Austin, TX<br>
+<li>Added or changed range values and descriptions for "Continous
+Acquisition", "Configure Math (Unary Operation)", "Configure Trigger
+(Pattern)", "Configure Trigger (Width)",
+"Configure Trigger (TV)", "Configure Trigger Mode", "Fetch Measurement
+(Time Edge Interval)", "Fetch Measurement (Time Voltage Interval)" and
+"Configure Measurement Trend Setting" VIs.</li>
+<li>Added comment to block diagram of "Default Instrument Setup" VI.</li>
+<li>Added VISA clear to "Fetch (Digital Waveform)" VI.</li>
+<li>Changed bad command "*MTER?" to ":MTER?" in "Mask Actions" VI.</li>
+<br>
+
+REV 2.0.2 01/15/08<br>
+Modified by Berk Ozdogan, NI, Austin, TX<br>
+<li>Configure Trigger (Pattern).vi: "Pattern Condition", "Minimum
+Time", "Maximum Time" controls descriptions are updated to include
+correct valid values.</li>
+<br>
+
+REV 2.0.3 08/12/08<br>
+Modified by Logan Lamb, Austin, TX<br>
+<li>A 'Greater Than or Equal' operator was changed to 'Greater Than' in
+Configure Trigger Mode VI so that the correct instrument model would be
+recognized</li>
+<br>
+
+REV 2.1 10/30/08<br>
+Modified by: Edward Zhang<br>
+<li>Add support for DSA 80000 Series.</li>
+<li>Obsoleted Configure Clock Recovery</li>
+<li>Added Configure Clock Recovery Method and Configure Clock Recovery Scale</li>
+<br>
+
+REV 2.1.1 10/10/12<br>
+Modified by Amir Moghadam, Austin, TX<br>
+<li>Corrected logic in Error Query to follow the templates</li>
+<br>
+
+REV 2.1.2, 04/2015<br>
+Modified by: National Instruments<br>
+Initialize - Updated to include Keysight Technologies along with Agilent as a Manufacturer
+<br>
+</body>
+</html>
